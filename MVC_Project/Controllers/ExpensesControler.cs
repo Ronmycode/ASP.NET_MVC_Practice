@@ -29,7 +29,7 @@ namespace MVC_Project.Controllers
             {
                 _context.Expenses.Add(expense);
                 _context.SaveChanges();
-                
+
                 return RedirectToAction("Index");
             }
             return View(expense);
