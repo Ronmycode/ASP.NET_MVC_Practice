@@ -1,19 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MVC_Project.Data;
+using MVC_Project.Data.Services;
 using MVC_Project.Models;
 
 namespace MVC_Project.Controllers
 {
     public class ExpensesController : Controller
     {   
-        private readonly Finance_Context _context;
-        public ExpensesController(Finance_Context context)
+        private readonly IExpensesService _expensesService;
+        public ExpensesController(IExpensesService expensesService)
         {
-            _context = context;
+            _expensesService = expensesService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var expenses = _context.Expenses.ToList();
+            var expenses = await _expensesService.GetAll();
             return View(expenses);
         }
 
@@ -23,12 +25,11 @@ namespace MVC_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Expense expense)
+        public async Task<IActionResult> Create(Expense expense)
         {
             if(ModelState.IsValid)
             {
-                _context.Expenses.Add(expense);
-                _context.SaveChanges();
+                await _expensesService.Add(expense);
 
                 return RedirectToAction("Index");
             }
