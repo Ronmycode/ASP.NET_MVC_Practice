@@ -14,6 +14,7 @@ namespace MVC_Project.Data.Services
 
         public async Task Add(Expense expense)
         {
+            Console.WriteLine($"Using DB: {_context.Database.GetConnectionString()}");
             _context.Expenses.Add(expense);
             await _context.SaveChangesAsync();
         }
