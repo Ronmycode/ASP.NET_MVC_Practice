@@ -24,5 +24,17 @@ namespace MVC_Project.Data.Services
             var expenses = await _context.Expenses.ToListAsync();
             return expenses;
         }
+
+        public IQueryable GetChartData()
+        {
+            var data = _context.Expenses
+                               .GroupBy(e => e.Category)
+                               .Select(g => new
+                               {
+                                   Category = g.Key,
+                                   Total = g.Sum(e => e.Amount)
+                               });
+            return data;
+        }
     }
 }
