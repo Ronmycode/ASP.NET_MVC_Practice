@@ -1,7 +1,6 @@
 # Expense Tracker – ASP.NET Core MVC Web App
 
-This is a **Expense Tracker** project, developed as part of my learning journey with **ASP.NET Core MVC**. The project follows the tutorial  
-[**“How to Build an ASP.NET Core MVC Web App – Tutorial”**](https://www.youtube.com/watch?v=QtiM87MV27w&t=3707s).
+This is a **Expense Tracker** project, developed as part of my learning journey with **ASP.NET Core MVC**. The project follows the tutorial [**“How to Build an ASP.NET Core MVC Web App – Tutorial”**](https://www.youtube.com/watch?v=QtiM87MV27w&t=3707s).
 
 ---
 
