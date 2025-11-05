@@ -34,5 +34,5 @@ The tutorial demonstrates key concepts of the **Model–View–Controller (MVC)*
 
 ## Project Preview
 
-![App Screenshot](.MVC_Project/img/Screenshot1.PNG)
+![App Screenshot](./MVC_Project/img/Screenshot1.PNG)
 
